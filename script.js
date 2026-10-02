@@ -36,6 +36,22 @@ const englishText = {
     "REKLÁM.":"ADVERTISING.", "MOZGÓKÉP.":"MOTION.", "Látványos reklámanyagokat és professzionális":"Eye-catching advertising and professional", "Resolume Arena projekteket":"Resolume Arena projects", "készítek LED falakra, rendezvényekre és digitális kijelzőkre.":"for LED walls, events, and digital displays.", "SZOLGÁLTATÁSOK →":"SERVICES →", "FORMÁTUM":"FORMAT", "EGYEDI":"CUSTOM", "PLATFORM":"PLATFORM", "KIMENET":"DELIVERABLE", "KÉSZ PROJEKT":"READY-TO-USE PROJECT", "REKLÁM VIDEÓ":"AD VIDEO", "Rövid, látványos reklámok LED falra, rendezvényre, színpadra vagy digitális kijelzőre.":"Short, striking ads for LED walls, events, stages, and digital displays.", "egyedi animációk":"custom animations", "szöveg- és logóanimáció":"text and logo animation", "zenei / vizuális ritmus":"music and visual rhythm", "egyedi felbontás":"custom resolution", "RESOLUME PROJEKT":"RESOLUME PROJECT", "Kész Resolume Arena projekt reklámok, események, LED falak és folyamatos lejátszás számára.":"A ready-to-use Resolume Arena project for ads, events, LED walls, and continuous playback.", "Layer / Composition felépítés":"Layer / composition setup", "Loopolt reklámblokkok":"Looping ad blocks", "Media + text rétegek":"Media and text layers", "LED falhoz igazított méret":"Sized for your LED wall", "KÜLÖNÖSEN LED FALRA":"IDEAL FOR LED WALLS", "REKLÁMBLOKK":"AD PLAYLIST", "Több reklám egy egységes rendszerben, előre beállított sorrenddel és lejátszási logikával.":"Multiple ads in one consistent system, with a preset order and playback logic.", "több reklám kezelése":"manage multiple ads", "egységes arculat":"consistent visual identity", "ismétlődő lejátszás":"repeating playback", "rendezvényre optimalizálva":"optimized for events", "PROJEKT.":"PROJECT.", "RENDSZER.":"SYSTEM.", "Nem csak egy videófájlt kapsz. A reklámanyagokat igény szerint":"You get more than a video file. If needed, I also organize your ad assets into a", "Resolume Arena projektbe":"Resolume Arena project", "is rendezem, így a helyszínen egyszerűen kezelhetőek és lejátszhatóak.":"so they’re easy to manage and play at the venue.", "EGYEDI COMPOSITION":"CUSTOM COMPOSITION", "A LED fal tényleges képarányához és felbontásához igazítva.":"Matched to your LED wall’s aspect ratio and resolution.", "REKLÁM LOOP":"AD LOOP", "Folyamatos, megszakítás nélküli lejátszásra kialakítva.":"Designed for continuous, uninterrupted playback.", "RENDSZEREZETT LAYER-EK":"ORGANIZED LAYERS", "Átlátható felépítés a gyors helyszíni kezeléshez.":"A clear setup for quick on-site operation.", "HOGYAN KÉSZÜL?":"HOW IT’S MADE", "ANYAGOK":"ASSETS", "Megkapom a logót, képeket, videókat, szöveget és a kívánt méretet.":"Send me your logo, images, videos, copy, and desired dimensions.", "DESIGN":"DESIGN", "Összeállítom a vizuális koncepciót, animációt és a reklám ritmusát.":"I’ll develop the visual concept, animation, and pacing.", "RESOLUME":"RESOLUME", "Szükség esetén a kész reklámokat Resolume Arena projektbe rendezem.":"If needed, I’ll organize the finished ads in a Resolume Arena project.", "ÁTADÁS":"DELIVERY", "Megkapod a kész videókat és – ha kéred – a használatra kész projektet.":"You’ll receive the finished videos and, if requested, a ready-to-use project.", "A KIJELZŐHÖZ IGAZÍTVA.":"MADE FOR YOUR DISPLAY.", "LED FAL":"LED WALL", "Egyedi pixelméret és képarány alapján.":"Built to your custom pixel dimensions and aspect ratio.", "Hagyományos videós és digitális kijelzőkhöz.":"For standard video and digital displays.", "Portré, ultrawide vagy bármilyen megadott felbontás.":"Portrait, ultrawide, or any specified resolution.", "LOOP":"LOOP", "Folyamatos, ismétlődő reklámlejátszáshoz.":"For continuous, repeating ad playback.", "VAN EGY ÖTLETED?":"HAVE AN IDEA?", "Küldd el a reklámhoz szükséges anyagokat és írd meg, milyen kijelzőre vagy LED falra készül.":"Send the assets for your ad and tell me what display or LED wall it’s for.", "AJÁNLATKÉRÉS →":"REQUEST A QUOTE →"
 };
 englishText["LED / 16:9 / EGYEDI"] = "LED / 16:9 / CUSTOM";
+Object.assign(englishText, {
+    "// REFERENCIÁK / MUNKÁIM":"// PROJECTS / MY WORK",
+    "Weblume — Webfejlesztés":"Weblume — Web Development", "Referenciák — Weblume":"Projects — Weblume",
+    "ÚJ VÁLLALKOZÁS":"AVAILABLE FOR NEW PROJECTS",
+    "KÓD. AMI":"CODE THAT", "Szoftverfejlesztő és tesztelő vagyok.":"I’m a software developer and tester.", "Egyedi weboldalakat, webshopokat és":"I build custom websites, online stores, and", "webalkalmazásokat készítek megrendelésre.":"web applications to order.",
+    "01 / Bemutatkozó":"01 / Business website", "02 / Webshop":"02 / Online store", "03 / Egyedi":"03 / Custom",
+    "Egy oldalas vagy több oldalas":"One-page or multi-page", "prezentációs weboldal —":"presentation websites —", "reszponzív, gyors, SEO alapokkal.":"responsive, fast, and built with SEO fundamentals.",
+    "Termékkezelés, pénztár,":"Product management, checkout,", "Stripe / Barion integráció,":"Stripe / Barion integration,", "admin felület.":"and an admin panel.", "Belső rendszerek,":"Internal tools,", "foglalási felületek,":"booking systems,", "dashboardok, API-k —":"dashboards, APIs —", "full-stack.":"full-stack development.",
+    "Valós projektek. Valós eredmények.":"Real projects. Real results.", "Weboldalak, webalkalmazások és digitális megoldások,":"Websites, web applications, and digital solutions", "amelyeket különböző célokra és vállalkozások számára készítettem.":"built for different goals and businesses.",
+    "AMIKET":"WHAT I’VE", "ÉPÍTETTEM.":"BUILT.", "Egyetemi intézményi weboldal hírekkel,":"University website featuring news,", "eseménynaptárral és galériával. Reszponzív,":"an events calendar, and a gallery. Responsive,", "adminisztrálható felület.":"easy-to-manage content.",
+    "PTE SZGY weboldal referencia":"PTE SZGY website project", "Nails by Rebeka weboldal referencia":"Nails by Rebeka website project", "Szabó Autókozmetika weboldal referencia":"Szabó Autókozmetika website project",
+    "Prémium műköröm szalon prezentációs oldala":"Premium nail salon website with", "online időpontfoglalással, árlistával és munkagalériával.":"online booking, pricing, and a portfolio gallery.",
+    "Prémium autókozmetikai landing page online":"Premium car detailing landing page with online", "időpontfoglalással, csomagválasztóval és árlistával.":"booking, service packages, and pricing.",
+    "MEGNYITÁS":"VIEW PROJECT", "// KÖVETKEZŐ PROJEKT":"// NEXT PROJECT", "TE KÖVETKEZEL.":"YOU’RE NEXT.", "Szeretnél hasonló vagy teljesen egyedi weboldalt?":"Looking for a similar or fully custom website?", "© 2026 Weblume. Minden jog fenntartva.":"© 2026 Weblume. All rights reserved.",
+    "Bezárás":"Close", "// ELKÜLDVE":"// SENT", "KÖSZÖNÖM A":"THANK YOU FOR YOUR", "MEGKERESÉST!":"MESSAGE!", "Az ajánlatkérésed sikeresen megérkezett. Hamarosan jelentkezem a megadott elérhetőségen.":"Your quote request has been received. I’ll be in touch soon using the contact details you provided.", "RENDBEN →":"OKAY →"
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     let currentLanguage = "hu";
@@ -68,9 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!el.dataset.huAriaLabel) el.dataset.huAriaLabel = el.getAttribute("aria-label");
             el.setAttribute("aria-label", translateValue(el.dataset.huAriaLabel));
         });
-        document.querySelectorAll("input[name]").forEach(el => {
-            if (!el.dataset.huName) el.dataset.huName = el.name;
-            el.name = translateValue(el.dataset.huName);
+        document.querySelectorAll("[alt]").forEach(el => {
+            if (!el.dataset.huAlt) el.dataset.huAlt = el.getAttribute("alt");
+            el.setAttribute("alt", translateValue(el.dataset.huAlt));
         });
         document.querySelectorAll("input[data-extra]").forEach(el => {
             if (!el.dataset.huExtra) el.dataset.huExtra = el.dataset.extra;
@@ -86,15 +102,21 @@ document.addEventListener("DOMContentLoaded", () => {
             button.setAttribute("aria-pressed", String(active));
             button.setAttribute("aria-label", button.textContent.includes("🇭🇺") ? "Magyar" : "English");
         });
-        localStorage.setItem("site-language", language);
+        try { localStorage.setItem("site-language", language); } catch (error) { /* Language still works for this page. */ }
         document.title = language === "en" ? translateValue(originalTitle) : originalTitle;
         calculate();
         if (formMessage?.textContent) {
-            formMessage.textContent = language === "en" ? "Opening your email app..." : "Az e-mail kliens megnyitása folyamatban...";
+            const message = formMessage.textContent.trim();
+            if (message === "Opening your email app..." || message === "Az e-mail kliens megnyitása folyamatban...") {
+                formMessage.textContent = language === "en" ? "Opening your email app..." : "Az e-mail kliens megnyitása folyamatban...";
+            } else if (message === "Hiba történt az elküldés során. Kérlek, próbáld meg később újra." || message === "There was a problem sending your request. Please try again later.") {
+                formMessage.textContent = language === "en" ? "There was a problem sending your request. Please try again later." : "Hiba történt az elküldés során. Kérlek, próbáld meg később újra.";
+            }
         }
     };
 
-    const savedLanguage = localStorage.getItem("site-language") || "hu";
+    let savedLanguage = "hu";
+    try { savedLanguage = localStorage.getItem("site-language") || "hu"; } catch (error) { /* Default to Hungarian if storage is unavailable. */ }
     document.querySelectorAll(".lang").forEach(button => button.addEventListener("click", () => {
         switchLanguage(button.textContent.includes("🇬🇧") ? "en" : "hu");
     }));
@@ -214,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // General quote form
     const form = document.getElementById("quoteForm");
     const formMessage = document.getElementById("formMessage");
-    form?.addEventListener("submit", e => {
+    if (form && !form.hasAttribute("data-ajax-form")) form.addEventListener("submit", e => {
         e.preventDefault();
         const data = new FormData(form);
         const body = [...data.entries()].map(([k,v]) => `${k}: ${v}`).join("\n");

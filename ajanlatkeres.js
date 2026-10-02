@@ -9,14 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ========================================
-       CLOUDFLARE WORKER
-       ======================================== */
-
-    const WORKER_URL =
-        "https://rough-thunder-293f.szivospatrikev.workers.dev/";
-
-
-    /* ========================================
        SIKERES KÜLDÉS — POPUP MEGNYITÁSA
        ======================================== */
 
@@ -162,7 +154,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     submitButton.disabled = true;
 
                     submitButton.textContent =
-                        "KÜLDÉS FOLYAMATBAN...";
+                        document.documentElement.lang === "en"
+                            ? "SENDING..."
+                            : "KÜLDÉS FOLYAMATBAN...";
 
                 }
 
@@ -191,132 +185,194 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                     const nev =
-                        String(
-                            formData.get("Név") || ""
-                        ).trim();
+                        formData.get("Név") || "-";
 
 
                     const ceg =
-                        String(
-                            formData.get("Cég") || ""
-                        ).trim();
+                        formData.get("Cég") || "-";
 
 
                     const email =
-                        String(
-                            formData.get("Email") || ""
-                        ).trim();
+                        formData.get("Email") || "-";
 
 
                     const telefon =
-                        String(
-                            formData.get("Telefon") || ""
-                        ).trim();
+                        formData.get("Telefon") || "-";
 
 
                     const csomag =
-                        String(
-                            formData.get("Csomag") || ""
-                        ).trim();
+                        formData.get("Csomag") || "-";
 
 
                     const hatarido =
-                        String(
-                            formData.get("Határidő") || ""
-                        ).trim();
+                        formData.get("Határidő") || "-";
 
 
                     const koltsegkeret =
-                        String(
-                            formData.get("Költségkeret") || ""
-                        ).trim();
+                        formData.get("Költségkeret") || "-";
 
 
-                    const projektLeiras =
-                        String(
-                            formData.get("Projekt leírása") || ""
-                        ).trim();
+                    const projekt =
+                        formData.get("Projekt leírása") || "-";
 
 
                     /* ========================================
-                       KÖTELEZŐ MEZŐK ELLENŐRZÉSE
+                       TELJES EMAIL TARTALOM
                        ======================================== */
 
-                    if (
-                        !nev ||
-                        !email ||
-                        !csomag ||
-                        !projektLeiras
-                    ) {
+                    const emailTartalom = `
 
-                        throw new Error(
-                            "Kérlek, töltsd ki az összes kötelező mezőt."
-                        );
+ÚJ AJÁNLATKÉRÉS ÉRKEZETT
 
-                    }
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+KAPCSOLATTARTÓ ADATAI
+
+Név:
+${nev}
+
+Cég:
+${ceg}
+
+Email:
+${email}
+
+Telefon:
+${telefon}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROJEKT ADATAI
+
+Választott csomag:
+${csomag}
+
+Kívánt határidő:
+${hatarido}
+
+Költségkeret:
+${koltsegkeret}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROJEKT LEÍRÁSA
+
+${projekt}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Az ajánlatkérés a Weblume weboldalán keresztül érkezett.
+
+${new Date().toLocaleString("hu-HU")}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+`;
 
 
                     /* ========================================
-                       EMAIL ELLENŐRZÉSE
+                       EMAIL ADATOK
                        ======================================== */
 
-                    const emailRegex =
-                        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const emailData =
+                        new FormData();
 
 
-                    if (!emailRegex.test(email)) {
+                    /*
+                     * A címzett
+                     */
 
-                        throw new Error(
-                            "Kérlek, adj meg egy érvényes email-címet."
-                        );
-
-                    }
-
-
-                    /* ========================================
-                       CLOUDFLARE WORKERNEK KÜLDENDŐ ADATOK
-                       ======================================== */
-
-                    const requestData = {
-
-                        nev: nev,
-
-                        ceg: ceg,
-
-                        email: email,
-
-                        telefon: telefon,
-
-                        csomag: csomag,
-
-                        hatarido: hatarido,
-
-                        koltsegkeret: koltsegkeret,
-
-                        projektLeiras: projektLeiras
-
-                    };
+                    emailData.append(
+                        "_to",
+                        "szivospatrikev@gmail.com"
+                    );
 
 
-                    /* ========================================
-                       KÜLDÉS A CLOUDFLARE WORKERNEK
-                       ======================================== */
+                    /*
+                     * Email tárgya
+                     */
+
+                    emailData.append(
+                        "_subject",
+                        `ÚJ AJÁNLATKÉRÉS – ${nev}`
+                    );
+
+
+                    /*
+                     * Teljes email tartalma
+                     */
+
+                    emailData.append(
+                        "AJÁNLATKÉRÉS",
+                        emailTartalom
+                    );
+
+
+                    /*
+                     * Külön mezők is bekerülnek
+                     * az emailbe
+                     */
+
+                    emailData.append(
+                        "Név",
+                        nev
+                    );
+
+                    emailData.append(
+                        "Cég",
+                        ceg
+                    );
+
+                    emailData.append(
+                        "Email",
+                        email
+                    );
+
+                    emailData.append(
+                        "Telefon",
+                        telefon
+                    );
+
+                    emailData.append(
+                        "Csomag",
+                        csomag
+                    );
+
+                    emailData.append(
+                        "Határidő",
+                        hatarido
+                    );
+
+                    emailData.append(
+                        "Költségkeret",
+                        koltsegkeret
+                    );
+
+                    emailData.append(
+                        "Projekt leírása",
+                        projekt
+                    );
+
+
+                    /*
+                     * FormSubmit AJAX
+                     */
 
                     const response =
                         await fetch(
-                            WORKER_URL,
+                            "https://formsubmit.co/ajax/szivospatrikev@gmail.com",
                             {
                                 method: "POST",
 
                                 headers: {
-                                    "Content-Type":
+                                    "Accept":
                                         "application/json"
                                 },
 
-                                body:
-                                    JSON.stringify(
-                                        requestData
-                                    )
+                                body: emailData
                             }
                         );
 
@@ -326,12 +382,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                     /* ========================================
-                       WORKER VÁLASZ ELLENŐRZÉSE
+                       ELLENŐRZÉS
                        ======================================== */
 
                     if (
                         !response.ok ||
-                        !result.success
+                        result.success === false
                     ) {
 
                         throw new Error(
@@ -369,8 +425,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             "#ff4d4d";
 
                         formMessage.textContent =
-                            error.message ||
-                            "Hiba történt az elküldés során. Kérlek, próbáld meg később újra.";
+                            document.documentElement.lang === "en"
+                                ? "There was a problem sending your request. Please try again later."
+                                : "Hiba történt az elküldés során. Kérlek, próbáld meg később újra.";
 
                     }
 
