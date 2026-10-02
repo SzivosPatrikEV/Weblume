@@ -36,8 +36,14 @@ const englishText = {
     "REKLÁM.":"ADVERTISING.", "MOZGÓKÉP.":"MOTION.", "Látványos reklámanyagokat és professzionális":"Eye-catching advertising and professional", "Resolume Arena projekteket":"Resolume Arena projects", "készítek LED falakra, rendezvényekre és digitális kijelzőkre.":"for LED walls, events, and digital displays.", "SZOLGÁLTATÁSOK →":"SERVICES →", "FORMÁTUM":"FORMAT", "EGYEDI":"CUSTOM", "PLATFORM":"PLATFORM", "KIMENET":"DELIVERABLE", "KÉSZ PROJEKT":"READY-TO-USE PROJECT", "REKLÁM VIDEÓ":"AD VIDEO", "Rövid, látványos reklámok LED falra, rendezvényre, színpadra vagy digitális kijelzőre.":"Short, striking ads for LED walls, events, stages, and digital displays.", "egyedi animációk":"custom animations", "szöveg- és logóanimáció":"text and logo animation", "zenei / vizuális ritmus":"music and visual rhythm", "egyedi felbontás":"custom resolution", "RESOLUME PROJEKT":"RESOLUME PROJECT", "Kész Resolume Arena projekt reklámok, események, LED falak és folyamatos lejátszás számára.":"A ready-to-use Resolume Arena project for ads, events, LED walls, and continuous playback.", "Layer / Composition felépítés":"Layer / composition setup", "Loopolt reklámblokkok":"Looping ad blocks", "Media + text rétegek":"Media and text layers", "LED falhoz igazított méret":"Sized for your LED wall", "KÜLÖNÖSEN LED FALRA":"IDEAL FOR LED WALLS", "REKLÁMBLOKK":"AD PLAYLIST", "Több reklám egy egységes rendszerben, előre beállított sorrenddel és lejátszási logikával.":"Multiple ads in one consistent system, with a preset order and playback logic.", "több reklám kezelése":"manage multiple ads", "egységes arculat":"consistent visual identity", "ismétlődő lejátszás":"repeating playback", "rendezvényre optimalizálva":"optimized for events", "PROJEKT.":"PROJECT.", "RENDSZER.":"SYSTEM.", "Nem csak egy videófájlt kapsz. A reklámanyagokat igény szerint":"You get more than a video file. If needed, I also organize your ad assets into a", "Resolume Arena projektbe":"Resolume Arena project", "is rendezem, így a helyszínen egyszerűen kezelhetőek és lejátszhatóak.":"so they’re easy to manage and play at the venue.", "EGYEDI COMPOSITION":"CUSTOM COMPOSITION", "A LED fal tényleges képarányához és felbontásához igazítva.":"Matched to your LED wall’s aspect ratio and resolution.", "REKLÁM LOOP":"AD LOOP", "Folyamatos, megszakítás nélküli lejátszásra kialakítva.":"Designed for continuous, uninterrupted playback.", "RENDSZEREZETT LAYER-EK":"ORGANIZED LAYERS", "Átlátható felépítés a gyors helyszíni kezeléshez.":"A clear setup for quick on-site operation.", "HOGYAN KÉSZÜL?":"HOW IT’S MADE", "ANYAGOK":"ASSETS", "Megkapom a logót, képeket, videókat, szöveget és a kívánt méretet.":"Send me your logo, images, videos, copy, and desired dimensions.", "DESIGN":"DESIGN", "Összeállítom a vizuális koncepciót, animációt és a reklám ritmusát.":"I’ll develop the visual concept, animation, and pacing.", "RESOLUME":"RESOLUME", "Szükség esetén a kész reklámokat Resolume Arena projektbe rendezem.":"If needed, I’ll organize the finished ads in a Resolume Arena project.", "ÁTADÁS":"DELIVERY", "Megkapod a kész videókat és – ha kéred – a használatra kész projektet.":"You’ll receive the finished videos and, if requested, a ready-to-use project.", "A KIJELZŐHÖZ IGAZÍTVA.":"MADE FOR YOUR DISPLAY.", "LED FAL":"LED WALL", "Egyedi pixelméret és képarány alapján.":"Built to your custom pixel dimensions and aspect ratio.", "Hagyományos videós és digitális kijelzőkhöz.":"For standard video and digital displays.", "Portré, ultrawide vagy bármilyen megadott felbontás.":"Portrait, ultrawide, or any specified resolution.", "LOOP":"LOOP", "Folyamatos, ismétlődő reklámlejátszáshoz.":"For continuous, repeating ad playback.", "VAN EGY ÖTLETED?":"HAVE AN IDEA?", "Küldd el a reklámhoz szükséges anyagokat és írd meg, milyen kijelzőre vagy LED falra készül.":"Send the assets for your ad and tell me what display or LED wall it’s for.", "AJÁNLATKÉRÉS →":"REQUEST A QUOTE →"
 };
 englishText["LED / 16:9 / EGYEDI"] = "LED / 16:9 / CUSTOM";
+englishText["01 / Reklámanyag"] = "01 / Ad creative";
+englishText["02 / Resolume"] = "02 / Resolume project";
+englishText["03 / Kampány"] = "03 / Campaign";
+englishText["ÁRAJANLAT KÉRÉS →"] = "REQUEST A QUOTE →";
 Object.assign(englishText, {
     "// REFERENCIÁK / MUNKÁIM":"// PROJECTS / MY WORK",
+    "WEBOLDAL, REKLÁMANYAG MEGRENDELÉS →":"WEBSITE AND ADVERTISING MATERIAL ORDER →",
+    "Weboldalak, webalkalmazások és digitális megoldások, amelyeket különböző célokra és vállalkozások számára készítettem.":"Websites, web applications, and digital solutions built for different goals and businesses.",
     "Weblume — Webfejlesztés":"Weblume — Web Development", "Referenciák — Weblume":"Projects — Weblume",
     "ÚJ VÁLLALKOZÁS":"AVAILABLE FOR NEW PROJECTS",
     "KÓD. AMI":"CODE THAT", "Szoftverfejlesztő és tesztelő vagyok.":"I’m a software developer and tester.", "Egyedi weboldalakat, webshopokat és":"I build custom websites, online stores, and", "webalkalmazásokat készítek megrendelésre.":"web applications to order.",
@@ -51,6 +57,54 @@ Object.assign(englishText, {
     "Prémium autókozmetikai landing page online":"Premium car detailing landing page with online", "időpontfoglalással, csomagválasztóval és árlistával.":"booking, service packages, and pricing.",
     "MEGNYITÁS":"VIEW PROJECT", "// KÖVETKEZŐ PROJEKT":"// NEXT PROJECT", "TE KÖVETKEZEL.":"YOU’RE NEXT.", "Szeretnél hasonló vagy teljesen egyedi weboldalt?":"Looking for a similar or fully custom website?", "© 2026 Weblume. Minden jog fenntartva.":"© 2026 Weblume. All rights reserved.",
     "Bezárás":"Close", "// ELKÜLDVE":"// SENT", "KÖSZÖNÖM A":"THANK YOU FOR YOUR", "MEGKERESÉST!":"MESSAGE!", "Az ajánlatkérésed sikeresen megérkezett. Hamarosan jelentkezem a megadott elérhetőségen.":"Your quote request has been received. I’ll be in touch soon using the contact details you provided.", "RENDBEN →":"OKAY →"
+});
+
+
+Object.assign(englishText, {
+    "MIT SZERETNÉL RENDELNI? *": "WHAT WOULD YOU LIKE TO ORDER? *",
+    "WEBOLDAL": "WEBSITE",
+    "Weboldal, webshop vagy egyedi webalkalmazás": "Website, online store or custom web application",
+    "REKLÁM KÉSZÍTÉS": "ADVERTISING",
+    "Kép, videó, animáció, LED fal vagy social media reklám": "Graphics, video, animation, LED wall or social media advertising",
+    "A választás alapján csak a szolgáltatáshoz szükséges kérdések jelennek meg.": "Only the questions relevant to the selected service will appear.",
+    "WEBOLDAL TÍPUSA *": "WEBSITE TYPE *",
+    "KÍVÁNT HATÁRIDŐ": "DESIRED DEADLINE",
+    "KÖLTSÉGKERET": "BUDGET",
+    "REKLÁM TÍPUSA *": "AD TYPE *",
+    "Reklámgrafika / kép": "Ad graphic / image",
+    "Videóreklám": "Video ad",
+    "Animált reklám": "Animated ad",
+    "LED fal reklám": "LED wall ad",
+    "Social media reklám": "Social media ad",
+    "Egyedi reklámanyag": "Custom advertising material",
+    "HOL FOG MEGJELENNI?": "WHERE WILL IT APPEAR?",
+    "Instagram / Facebook": "Instagram / Facebook",
+    "LED fal": "LED wall",
+    "Nyomtatott felület": "Printed media",
+    "Egyéb": "Other",
+    "REKLÁM MÉRETE / FORMÁTUMA": "AD SIZE / FORMAT",
+    "pl. 1080×1920 px / 1920×1080 px / 2304×192 px": "e.g. 1080×1920 px / 1920×1080 px / 2304×192 px",
+    "pl. 2026 október 15.": "e.g. October 15, 2026",
+    "30–60 ezer Ft": "HUF 30,000–60,000",
+    "60–100 ezer Ft": "HUF 60,000–100,000",
+    "100–200 ezer Ft": "HUF 100,000–200,000",
+    "200 ezer Ft felett": "Over HUF 200,000",
+    "PROJEKT / REKLÁM LEÍRÁSA *": "PROJECT / AD DESCRIPTION *",
+    "Írd le röviden, mit szeretnél elkészíttetni, mi a célja, milyen tartalmak állnak rendelkezésre, és van-e valamilyen konkrét elképzelésed.": "Briefly describe what you would like created, its purpose, what content is available, and whether you have any specific ideas.",
+    "ELKÜLDVE": "SENT",
+    "KÖSZÖNÖM A": "THANK YOU FOR YOUR",
+    "MEGKERESÉST!": "MESSAGE!",
+    "Az ajánlatkérésed sikeresen megérkezett.": "Your quote request has been received.",
+    "Hamarosan jelentkezem a megadott elérhetőségen.": "I will contact you soon using the details you provided.",
+    "RENDBEN →": "OKAY →",
+    "Bezárás": "Close",
+    "AJÁNLATKÉRÉS ELKÜLDÉSE →": "SEND QUOTE REQUEST →",
+    "KÜLDÉS FOLYAMATBAN...": "SENDING...",
+    "A név megadása kötelező.": "Name is required.",
+    "Az email cím megadása kötelező.": "Email address is required.",
+    "A projekt leírása kötelező.": "Project description is required.",
+    "Válaszd ki az ajánlat típusát.": "Please select a service type.",
+    "Az ajánlatkérés küldése sikertelen.": "The quote request could not be sent."
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -75,6 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const leading = original.match(/^\s*/)[0];
             const trailing = original.match(/\s*$/)[0];
             node.nodeValue = `${leading}${translateValue(trimmed)}${trailing}`;
+        });
+        document.querySelectorAll("[data-lang-hu][data-lang-en]").forEach(el => {
+            el.textContent = el.getAttribute(language === "en" ? "data-lang-en" : "data-lang-hu");
         });
         document.querySelectorAll("input[placeholder], textarea[placeholder]").forEach(el => {
             if (!el.dataset.huPlaceholder) el.dataset.huPlaceholder = el.placeholder;

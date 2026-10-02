@@ -1,113 +1,472 @@
 <!DOCTYPE html>
 <html lang="hu">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>AJÁNLATKÉRÉS — SZÍVÓS.</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body id="top">
-        <header class="header">
-            <a class="logo" href="/">Weblume
-                <span>.</span>
-            </a>
-            <nav class="nav">
-                <a href="/">KEZDŐLAP</a>
-                <a href="/weboldal-rendeles">WEBOLDAL RENDELÉS</a>
-                <a href="/reklam-keszites">REKLÁM KÉSZÍTÉS</a>
-                <a href="/referenciak">REFERENCIÁK</a>
-                <a href="/kapcsolat">KAPCSOLAT</a>
-            </nav>
-            <div class="header-right">
-                <button class="lang active">🇭🇺</button>
-                <button class="lang">🇬🇧</button>
-                <span class="status">
-                    <i></i> ÚJ VÁLLALKOZÁS — NYITVA
-                </span>
-            </div>
-            <button class="menu-toggle" aria-label="Menü">☰</button>
-        </header>
-        <main class="page">
-            <section class="section quote-section">
-                <div class="container">
-                    <div class="eyebrow">// &nbsp; AJÁNLATKÉRÉS</div>
-                    <h1 style="font:900 clamp(65px,8vw,115px)/.8 'Barlow Condensed';margin:18px 0 12px">AJÁNLATKÉRÉS</h1>
-                    <p style="color:#747980;margin-bottom:45px">Minél több részletet írsz, annál pontosabb ajánlatot tudok küldeni.</p>
-                    <form class="quote-form" id="quoteForm" data-ajax-form>
-                        <div class="form-grid">
-                            <div class="field">
-                                <label>NÉV *</label>
-                                <input name="Név" required>
-                            </div>
-                            <div class="field">
-                                <label>CÉG</label>
-                                <input name="Cég">
-                            </div>
-                            <div class="field">
-                                <label>EMAIL *</label>
-                                <input type="email" name="Email" required>
-                            </div>
-                            <div class="field">
-                                <label>TELEFON</label>
-                                <input name="Telefon">
-                            </div>
-                            <div class="field">
-                                <label>CSOMAG *</label>
-                                <select name="Csomag" required>
-                                    <option value="">Válassz...</option>
-                                    <option>One-page starter</option>
-                                    <option>Bemutatkozó oldal</option>
-                                    <option>Webshop</option>
-                                    <option>Egyedi alkalmazás</option>
-                                </select>
-                            </div>
-                            <div class="field">
-                                <label>KÍVÁNT HATÁRIDŐ</label>
-                                <input name="Határidő" placeholder="pl. 2026 augusztus">
-                            </div>
-                            <div class="field">
-                                <label>KÖLTSÉGKERET</label>
-                                <select name="Költségkeret">
-                                    <option>Válassz...</option>
-                                    <option>80–150 ezer Ft</option>
-                                    <option>150–300 ezer Ft</option>
-                                    <option>300–500 ezer Ft</option>
-                                    <option>500 ezer Ft felett</option>
-                                </select>
-                            </div>
-                            <div class="field full-row">
-                                <label>PROJEKT LEÍRÁSA *</label>
-                                <textarea name="Projekt leírása" required placeholder="Mit szeretnél elérni? Van már design vagy inspiráció? Milyen funkciók kellenek?"></textarea>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary full form-submit" type="submit">AJÁNLATKÉRÉS ELKÜLDÉSE →</button>
-                        <p class="form-message" id="formMessage"></p>
-                    </form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>AJÁNLATKÉRÉS — Weblume</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== AJÁNLATKÉRÉS — TÍPUSVÁLASZTÓ ===== */
+
+        .quote-type {
+            margin: 0 0 42px;
+        }
+
+        .quote-type-label {
+            display: block;
+            margin-bottom: 14px;
+            color: #747980;
+            font: 700 10px "Barlow Condensed", sans-serif;
+            letter-spacing: 3px;
+        }
+
+        .quote-type-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .quote-type-option {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .quote-type-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .quote-type-card {
+            min-height: 110px;
+            padding: 24px 26px;
+            border: 1px solid #292d31;
+            background: #0c0e10;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: .25s ease;
+        }
+
+        .quote-type-card:hover {
+            border-color: #006bc9;
+            transform: translateY(-2px);
+        }
+
+        .quote-type-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border: 1px solid #30353a;
+            color: #008cff;
+            font-size: 22px;
+            background: #07090b;
+        }
+
+        .quote-type-text strong {
+            display: block;
+            color: #f4f5f7;
+            font: 700 22px/1 "Barlow Condensed", sans-serif;
+            letter-spacing: .5px;
+        }
+
+        .quote-type-text span {
+            display: block;
+            margin-top: 7px;
+            color: #747980;
+            font: 400 12px/1.45 Inter, Arial, sans-serif;
+        }
+
+        .quote-type-option input:checked + .quote-type-card {
+            border-color: #008cff;
+            background:
+                linear-gradient(110deg, rgba(0,140,255,.12), rgba(0,140,255,.025)),
+                #0c0e10;
+            box-shadow: 0 0 0 1px rgba(0,140,255,.15), 0 0 35px rgba(0,140,255,.07);
+        }
+
+        .quote-type-option input:checked + .quote-type-card .quote-type-icon {
+            border-color: #008cff;
+            background: #008cff;
+            color: #03101a;
+        }
+
+        .quote-form .conditional-field {
+            display: none;
+        }
+
+        .quote-form[data-type="website"] .website-field {
+            display: block;
+        }
+
+        .quote-form[data-type="reklam"] .reklam-field {
+            display: block;
+        }
+
+        .quote-type-note {
+            margin-top: 12px;
+            color: #555b62;
+            font-size: 11px;
+        }
+
+        @media (max-width: 650px) {
+            .quote-type-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-type-card {
+                min-height: 92px;
+                padding: 19px;
+            }
+
+            .quote-type-text strong {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+<header class="header">
+    <a class="logo" href="/">
+        Weblume<span>.</span>
+    </a>
+
+    <nav class="nav">
+        <a href="/">KEZDŐLAP</a>
+        <a href="/weboldal-rendeles" class="active">WEBOLDAL RENDELÉS</a>
+        <a href="/reklam-keszites">REKLÁM KÉSZÍTÉS</a>
+        <a href="/referenciak">REFERENCIÁK</a>
+        <a href="/kapcsolat">KAPCSOLAT</a>
+    </nav>
+
+    <div class="header-right">
+        <button class="lang active">🇭🇺</button>
+        <button class="lang">🇬🇧</button>
+        <span class="status">
+            <i></i> ÚJ VÁLLALKOZÁS — NYITVA
+        </span>
+    </div>
+
+    <button class="menu-toggle" aria-label="Menü">☰</button>
+</header>
+
+<main class="page">
+    <section class="section quote-section">
+        <div class="container">
+
+            <div class="eyebrow">// &nbsp; AJÁNLATKÉRÉS</div>
+
+            <h1 style="font:900 clamp(65px,8vw,115px)/.8 'Barlow Condensed';margin:18px 0 12px">
+                AJÁNLATKÉRÉS
+            </h1>
+
+            <p style="color:#747980;margin-bottom:38px">
+                Először válaszd ki, hogy milyen szolgáltatásra szeretnél ajánlatot kérni.
+            </p>
+
+            <!-- SZOLGÁLTATÁS VÁLASZTÓ -->
+            <div class="quote-type">
+                <span class="quote-type-label">MIT SZERETNÉL RENDELNI? *</span>
+
+                <div class="quote-type-grid">
+
+                    <label class="quote-type-option">
+                        <input
+                            type="radio"
+                            name="ajanlatTipus"
+                            value="website"
+                            checked
+                        >
+
+                        <span class="quote-type-card">
+                            <span class="quote-type-icon">⌘</span>
+
+                            <span class="quote-type-text">
+                                <strong>WEBOLDAL</strong>
+                                <span>Weboldal, webshop vagy egyedi webalkalmazás</span>
+                            </span>
+                        </span>
+                    </label>
+
+                    <label class="quote-type-option">
+                        <input
+                            type="radio"
+                            name="ajanlatTipus"
+                            value="reklam"
+                        >
+
+                        <span class="quote-type-card">
+                            <span class="quote-type-icon">▶</span>
+
+                            <span class="quote-type-text">
+                                <strong>REKLÁM KÉSZÍTÉS</strong>
+                                <span>Kép, videó, animáció, LED fal vagy social media reklám</span>
+                            </span>
+                        </span>
+                    </label>
+
                 </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="logo">SZÍVÓS
-                <span>.</span>
-            </div>
-            <p>© 2026 SZÍVÓS. Minden jog fenntartva.</p>
-            <a href="#top">VISSZA A TETEJÉRE ↑</a>
-        </footer>
 
-        <!-- Sikeres ajánlatkérés popup -->
-        <div class="success-modal" id="successModal" aria-hidden="true">
-            <div class="success-modal-backdrop"></div>
-            <div class="success-modal-box" role="dialog" aria-modal="true" aria-labelledby="successTitle">
-                <button class="success-modal-close" id="successModalClose" type="button" aria-label="Bezárás">×</button>
-                <div class="success-icon">✓</div>
-                <div class="eyebrow">// &nbsp; ELKÜLDVE</div>
-                <h2 id="successTitle">KÖSZÖNÖM A<br>MEGKERESÉST!</h2>
-                <p>Az ajánlatkérésed sikeresen megérkezett. Hamarosan jelentkezem a megadott elérhetőségen.</p>
-                <button class="btn btn-primary success-modal-button" id="successModalOk" type="button">RENDBEN →</button>
+                <div class="quote-type-note">
+                    A választás alapján csak a szolgáltatáshoz szükséges kérdések jelennek meg.
+                </div>
             </div>
+
+            <form
+                class="quote-form"
+                id="quoteForm"
+                data-ajax-form
+                data-type="website"
+            >
+
+                <div class="form-grid">
+
+                    <!-- KÖZÖS ADATOK -->
+
+                    <div class="field">
+                        <label>NÉV *</label>
+                        <input name="Név" required>
+                    </div>
+
+                    <div class="field">
+                        <label>CÉG</label>
+                        <input name="Cég">
+                    </div>
+
+                    <div class="field">
+                        <label>EMAIL *</label>
+                        <input type="email" name="Email" required>
+                    </div>
+
+                    <div class="field">
+                        <label>TELEFON</label>
+                        <input name="Telefon">
+                    </div>
+
+
+                    <!-- WEBOLDAL MEZŐK -->
+
+                    <div class="field conditional-field website-field">
+                        <label>WEBOLDAL TÍPUSA *</label>
+                        <select name="Weboldal csomag" id="websitePackage">
+                            <option value="">Válassz...</option>
+                            <option>One-page starter</option>
+                            <option>Bemutatkozó oldal</option>
+                            <option>Webshop</option>
+                            <option>Egyedi webalkalmazás</option>
+                        </select>
+                    </div>
+
+                    <div class="field conditional-field website-field">
+                        <label>KÍVÁNT HATÁRIDŐ</label>
+                        <input name="Weboldal határidő" placeholder="pl. 2026 augusztus">
+                    </div>
+
+                    <div class="field conditional-field website-field">
+                        <label>KÖLTSÉGKERET</label>
+                        <select name="Weboldal költségkeret">
+                            <option value="">Válassz...</option>
+                            <option>80–150 ezer Ft</option>
+                            <option>150–300 ezer Ft</option>
+                            <option>300–500 ezer Ft</option>
+                            <option>500 ezer Ft felett</option>
+                        </select>
+                    </div>
+
+
+                    <!-- REKLÁM MEZŐK -->
+
+                    <div class="field conditional-field reklam-field">
+                        <label>REKLÁM TÍPUSA *</label>
+                        <select name="Reklám típusa" id="adType">
+                            <option value="">Válassz...</option>
+                            <option>Reklámgrafika / kép</option>
+                            <option>Videóreklám</option>
+                            <option>Animált reklám</option>
+                            <option>LED fal reklám</option>
+                            <option>Social media reklám</option>
+                            <option>Egyedi reklámanyag</option>
+                        </select>
+                    </div>
+
+                    <div class="field conditional-field reklam-field">
+                        <label>HOL FOG MEGJELENNI?</label>
+                        <select name="Reklám felület">
+                            <option value="">Válassz...</option>
+                            <option>Instagram / Facebook</option>
+                            <option>TikTok</option>
+                            <option>LED fal</option>
+                            <option>Weboldal</option>
+                            <option>Nyomtatott felület</option>
+                            <option>Egyéb</option>
+                        </select>
+                    </div>
+
+                    <div class="field conditional-field reklam-field">
+                        <label>REKLÁM MÉRETE / FORMÁTUMA</label>
+                        <input
+                            name="Reklám méret"
+                            placeholder="pl. 1080×1920 px / 1920×1080 px / 2304×192 px"
+                        >
+                    </div>
+
+                    <div class="field conditional-field reklam-field">
+                        <label>KÍVÁNT HATÁRIDŐ</label>
+                        <input name="Reklám határidő" placeholder="pl. 2026 október 15.">
+                    </div>
+
+                    <div class="field conditional-field reklam-field">
+                        <label>KÖLTSÉGKERET</label>
+                        <select name="Reklám költségkeret">
+                            <option value="">Válassz...</option>
+                            <option>30–60 ezer Ft</option>
+                            <option>60–100 ezer Ft</option>
+                            <option>100–200 ezer Ft</option>
+                            <option>200 ezer Ft felett</option>
+                        </select>
+                    </div>
+
+                    <!-- LEÍRÁS -->
+
+                    <div class="field full-row">
+                        <label>PROJEKT / REKLÁM LEÍRÁSA *</label>
+
+                        <textarea
+                            name="Projekt leírása"
+                            required
+                            placeholder="Írd le röviden, mit szeretnél elkészíttetni, mi a célja, milyen tartalmak állnak rendelkezésre, és van-e valamilyen konkrét elképzelésed."
+                        ></textarea>
+                    </div>
+
+                </div>
+
+                <!-- A BACKEND SZÁMÁRA EGYÉRTELMŰEN JELEZZÜK A TÍPUST -->
+                <input type="hidden" name="Ajánlat típusa" id="quoteTypeValue" value="Weboldal">
+
+                <button
+                    class="btn btn-primary full form-submit"
+                    type="submit"
+                >
+                    AJÁNLATKÉRÉS ELKÜLDÉSE →
+                </button>
+
+                <p class="form-message" id="formMessage"></p>
+
+            </form>
         </div>
+    </section>
+</main>
 
-        <script src="script.js"></script>
-        <script src="ajanlatkeres.js"></script>
-    </body>
+<!-- SIKERES AJÁNLATKÉRÉS POPUP -->
+<div class="success-modal" id="successModal" aria-hidden="true">
+    <div class="success-modal-backdrop"></div>
+
+    <div
+        class="success-modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="successTitle"
+    >
+        <button
+            class="success-modal-close"
+            id="successModalClose"
+            type="button"
+            aria-label="Bezárás"
+        >×</button>
+
+        <div class="success-icon">✓</div>
+
+        <div class="eyebrow">// &nbsp; ELKÜLDVE</div>
+
+        <h2 id="successTitle">
+            KÖSZÖNÖM A<br>MEGKERESÉST!
+        </h2>
+
+        <p>
+            Az ajánlatkérésed sikeresen megérkezett.
+            Hamarosan jelentkezem a megadott elérhetőségen.
+        </p>
+
+        <button
+            class="btn btn-primary success-modal-button"
+            id="successModalOk"
+            type="button"
+        >
+            RENDBEN →
+        </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script src="ajanlatkeres.js"></script>
+
+<script>
+    /*
+     * A választó működése.
+     * A meglévő ajanlatkeres.js-sel együtt működik:
+     * az űrlap mezői ugyanazokat a neveket használják.
+     */
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const form = document.getElementById("quoteForm");
+        const typeInputs = document.querySelectorAll('input[name="ajanlatTipus"]');
+        const quoteTypeValue = document.getElementById("quoteTypeValue");
+
+        const websiteFields = document.querySelectorAll(".website-field");
+        const reklamFields = document.querySelectorAll(".reklam-field");
+
+        const websitePackage = document.getElementById("websitePackage");
+        const adType = document.getElementById("adType");
+
+        function setRequired(fields, required) {
+            fields.forEach(field => {
+                field.querySelectorAll("input, select, textarea").forEach(input => {
+                    input.required = required;
+                });
+            });
+        }
+
+        function updateForm(type) {
+            form.dataset.type = type;
+
+            if (type === "reklam") {
+                quoteTypeValue.value = "Reklám készítés";
+
+                setRequired(websiteFields, false);
+                setRequired(reklamFields, true);
+
+                if (websitePackage) websitePackage.value = "";
+            } else {
+                quoteTypeValue.value = "Weboldal";
+
+                setRequired(websiteFields, false);
+                setRequired(reklamFields, false);
+
+                // Csak a valóban szükséges weboldal mező legyen kötelező.
+                if (websitePackage) websitePackage.required = true;
+
+                setRequired(reklamFields, false);
+
+                if (adType) adType.value = "";
+            }
+        }
+
+        typeInputs.forEach(input => {
+            input.addEventListener("change", () => {
+                updateForm(input.value);
+            });
+        });
+
+        updateForm(
+            document.querySelector('input[name="ajanlatTipus"]:checked')?.value || "website"
+        );
+    });
+</script>
+
+</body>
 </html>

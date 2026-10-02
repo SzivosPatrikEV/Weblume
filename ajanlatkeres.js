@@ -1,11 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const form = document.getElementById("quoteForm");
-    const formMessage = document.getElementById("formMessage");
+    /* ========================================
+       BEÁLLÍTÁSOK
+       ======================================== */
 
-    const successModal = document.getElementById("successModal");
-    const successModalClose = document.getElementById("successModalClose");
-    const successModalOk = document.getElementById("successModalOk");
+    const WORKER_URL =
+        "https://rough-thunder-293f.szivospatrikev.workers.dev/";
+
+
+    /* ========================================
+       DOM ELEMEK
+       ======================================== */
+
+    const form =
+        document.getElementById("quoteForm");
+
+    const formMessage =
+        document.getElementById("formMessage");
+
+    const successModal =
+        document.getElementById("successModal");
+
+    const successModalClose =
+        document.getElementById("successModalClose");
+
+    const successModalOk =
+        document.getElementById("successModalOk");
 
 
     /* ========================================
@@ -95,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
         }
+
     }
 
 
@@ -118,6 +139,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     );
+
+
+    /* ========================================
+       KIVÁLASZTOTT AJÁNLATTÍPUS
+       ======================================== */
+
+    function getSelectedType() {
+
+        if (
+            form &&
+            form.dataset.type === "reklam"
+        ) {
+
+            return "reklam";
+
+        }
+
+        return "website";
+    }
 
 
     /* ========================================
@@ -177,12 +217,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 try {
 
                     /* ========================================
-                       ADATOK BEOLVASÁSA
+                       FORM ADATOK
                        ======================================== */
 
                     const formData =
                         new FormData(form);
 
+
+                    /* ========================================
+                       KÖZÖS MEZŐK
+                       ======================================== */
 
                     const nev =
                         formData.get("Név") || "-";
@@ -200,189 +244,218 @@ document.addEventListener("DOMContentLoaded", () => {
                         formData.get("Telefon") || "-";
 
 
-                    const csomag =
-                        formData.get("Csomag") || "-";
-
-
-                    const hatarido =
-                        formData.get("Határidő") || "-";
-
-
-                    const koltsegkeret =
-                        formData.get("Költségkeret") || "-";
-
-
                     const projekt =
                         formData.get("Projekt leírása") || "-";
 
 
                     /* ========================================
-                       TELJES EMAIL TARTALOM
+                       AJÁNLATTÍPUS
                        ======================================== */
 
-                    const emailTartalom = `
-
-ÚJ AJÁNLATKÉRÉS ÉRKEZETT
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-KAPCSOLATTARTÓ ADATAI
-
-Név:
-${nev}
-
-Cég:
-${ceg}
-
-Email:
-${email}
-
-Telefon:
-${telefon}
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-PROJEKT ADATAI
-
-Választott csomag:
-${csomag}
-
-Kívánt határidő:
-${hatarido}
-
-Költségkeret:
-${koltsegkeret}
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-PROJEKT LEÍRÁSA
-
-${projekt}
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Az ajánlatkérés a Weblume weboldalán keresztül érkezett.
-
-${new Date().toLocaleString("hu-HU")}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-`;
+                    const type =
+                        getSelectedType();
 
 
                     /* ========================================
-                       EMAIL ADATOK
+                       WEBOLDAL ADATOK
                        ======================================== */
 
-                    const emailData =
-                        new FormData();
+                    let csomag = "-";
+
+                    let hatarido = "-";
+
+                    let koltsegkeret = "-";
+
+                    let finalDescription = "";
 
 
-                    /*
-                     * A címzett
-                     */
+                    if (type === "website") {
 
-                    emailData.append(
-                        "_to",
-                        "szivospatrikev@gmail.com"
-                    );
+                        csomag =
+                            formData.get(
+                                "Weboldal csomag"
+                            ) || "-";
 
 
-                    /*
-                     * Email tárgya
-                     */
-
-                    emailData.append(
-                        "_subject",
-                        `ÚJ AJÁNLATKÉRÉS – ${nev}`
-                    );
+                        hatarido =
+                            formData.get(
+                                "Weboldal határidő"
+                            ) || "-";
 
 
-                    /*
-                     * Teljes email tartalma
-                     */
-
-                    emailData.append(
-                        "AJÁNLATKÉRÉS",
-                        emailTartalom
-                    );
+                        koltsegkeret =
+                            formData.get(
+                                "Weboldal költségkeret"
+                            ) || "-";
 
 
-                    /*
-                     * Külön mezők is bekerülnek
-                     * az emailbe
-                     */
+                        finalDescription = `
+WEBOLDAL / WEBSHOP
 
-                    emailData.append(
-                        "Név",
-                        nev
-                    );
+${projekt}
+                        `.trim();
 
-                    emailData.append(
-                        "Cég",
-                        ceg
-                    );
-
-                    emailData.append(
-                        "Email",
-                        email
-                    );
-
-                    emailData.append(
-                        "Telefon",
-                        telefon
-                    );
-
-                    emailData.append(
-                        "Csomag",
-                        csomag
-                    );
-
-                    emailData.append(
-                        "Határidő",
-                        hatarido
-                    );
-
-                    emailData.append(
-                        "Költségkeret",
-                        koltsegkeret
-                    );
-
-                    emailData.append(
-                        "Projekt leírása",
-                        projekt
-                    );
+                    }
 
 
-                    /*
-                     * FormSubmit AJAX
-                     */
+                    /* ========================================
+                       REKLÁM ADATOK
+                       ======================================== */
+
+                    if (type === "reklam") {
+
+                        const reklamTipus =
+                            formData.get(
+                                "Reklám típusa"
+                            ) || "-";
+
+
+                        const reklamFelulelet =
+                            formData.get(
+                                "Reklám felület"
+                            ) || "-";
+
+
+                        const reklamMeret =
+                            formData.get(
+                                "Reklám méret"
+                            ) || "-";
+
+
+                        hatarido =
+                            formData.get(
+                                "Reklám határidő"
+                            ) || "-";
+
+
+                        koltsegkeret =
+                            formData.get(
+                                "Reklám költségkeret"
+                            ) || "-";
+
+
+                        csomag =
+                            `REKLÁM — ${reklamTipus}`;
+
+
+                        finalDescription = `
+REKLÁM KÉSZÍTÉS
+
+Reklám felület:
+${reklamFelulelet}
+
+Reklám méret/formátum:
+${reklamMeret}
+
+Megrendelő leírása:
+${projekt}
+                        `.trim();
+
+                    }
+
+
+                    /* ========================================
+                       ALAP VALIDÁCIÓ
+                       ======================================== */
+
+                    if (!nev || nev === "-") {
+
+                        throw new Error(
+                            "A név megadása kötelező."
+                        );
+
+                    }
+
+
+                    if (!email || email === "-") {
+
+                        throw new Error(
+                            "Az email cím megadása kötelező."
+                        );
+
+                    }
+
+
+                    if (!projekt || projekt === "-") {
+
+                        throw new Error(
+                            "A projekt leírása kötelező."
+                        );
+
+                    }
+
+
+                    if (!type) {
+
+                        throw new Error(
+                            "Válaszd ki az ajánlat típusát."
+                        );
+
+                    }
+
+
+                    /* ========================================
+                       WORKER PAYLOAD
+                       ======================================== */
+
+                    const payload = {
+
+                        nev,
+
+                        ceg,
+
+                        email,
+
+                        telefon,
+
+                        csomag,
+
+                        hatarido,
+
+                        koltsegkeret,
+
+                        projektLeiras:
+                            finalDescription
+
+                    };
+
+
+                    /* ========================================
+                       WORKER KÜLDÉS
+                       ======================================== */
 
                     const response =
                         await fetch(
-                            "https://formsubmit.co/ajax/szivospatrikev@gmail.com",
+                            WORKER_URL,
                             {
                                 method: "POST",
 
                                 headers: {
-                                    "Accept":
-                                        "application/json"
+                                    "Content-Type":
+                                        "application/json",
+
+                                    "Origin":
+                                        window.location.origin
                                 },
 
-                                body: emailData
+                                body:
+                                    JSON.stringify(
+                                        payload
+                                    )
                             }
                         );
 
+
+                    /* ========================================
+                       VÁLASZ
+                       ======================================== */
 
                     const result =
                         await response.json();
 
 
                     /* ========================================
-                       ELLENŐRZÉS
+                       HIBA ELLENŐRZÉS
                        ======================================== */
 
                     if (
@@ -404,6 +477,36 @@ ${new Date().toLocaleString("hu-HU")}
 
                     form.reset();
 
+
+                    /* visszaállítjuk WEBOLDAL-ra */
+
+                    const websiteRadio =
+                        form.querySelector(
+                            'input[name="ajanlatTipus"][value="website"]'
+                        );
+
+
+                    if (websiteRadio) {
+
+                        websiteRadio.checked = true;
+
+                        websiteRadio.dispatchEvent(
+                            new Event("change", {
+                                bubbles: true
+                            })
+                        );
+
+                    }
+
+
+                    form.dataset.type =
+                        "website";
+
+
+                    /* ========================================
+                       SIKER POPUP
+                       ======================================== */
+
                     openSuccessModal();
 
 
@@ -424,10 +527,16 @@ ${new Date().toLocaleString("hu-HU")}
                         formMessage.style.color =
                             "#ff4d4d";
 
+
                         formMessage.textContent =
-                            document.documentElement.lang === "en"
-                                ? "There was a problem sending your request. Please try again later."
-                                : "Hiba történt az elküldés során. Kérlek, próbáld meg később újra.";
+                            error.message ||
+                            (
+                                document.documentElement.lang === "en"
+
+                                    ? "There was a problem sending your request. Please try again later."
+
+                                    : "Hiba történt az elküldés során. Kérlek, próbáld meg később újra."
+                            );
 
                     }
 
@@ -439,7 +548,8 @@ ${new Date().toLocaleString("hu-HU")}
 
                     if (submitButton) {
 
-                        submitButton.disabled = false;
+                        submitButton.disabled =
+                            false;
 
                         submitButton.textContent =
                             originalText;

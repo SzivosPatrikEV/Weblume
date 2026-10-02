@@ -226,7 +226,7 @@ h3,
 }
 
 /* ==================================================
-   FÅOLDALI HERO â€” WEBLUME HÃTTÃ‰RKÃ‰P
+   FÃ…ÂOLDALI HERO Ã¢â‚¬â€ WEBLUME HÃƒÂTTÃƒâ€°RKÃƒâ€°P
 ================================================== */
 
 .hero-home {
@@ -237,7 +237,7 @@ h3,
     position: relative;
     overflow: hidden;
 
-    /* A generÃ¡lt Weblume kÃ©p hÃ¡ttÃ©rkÃ©nt */
+    /* A generÃƒÂ¡lt Weblume kÃƒÂ©p hÃƒÂ¡ttÃƒÂ©rkÃƒÂ©nt */
     background-image:
         linear-gradient(
             90deg,
@@ -742,14 +742,14 @@ h3,
 }
 
 .package li {
-    color: #62686f;
-    font: 700 9px "Barlow Condensed";
-    letter-spacing: 1.7px;
+    color: #aeb4bd;
+    font: 700 10px "Barlow Condensed";
+    letter-spacing: 1.2px;
     margin: 9px 0
 }
 
 .package li:before {
-    content: "ÃƒÂ¢Ã…â€œÃ¢â‚¬Å“";
+    content: "\2713";
     color: var(--blue);
     margin-right: 8px
 }
@@ -1046,7 +1046,7 @@ summary:after {
 }
 
 details[open] summary:after {
-    content: "ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢"
+    content: "\2212"
 }
 
 details p {
@@ -1382,7 +1382,7 @@ details p {
 }
 
 
-/* REKLÃƒÆ’Ã‚ÂM KÃƒÆ’Ã¢â‚¬Â°SZÃƒÆ’Ã‚ÂTÃƒÆ’Ã¢â‚¬Â°S */
+/* REKLÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂM KÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°SZÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂTÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°S */
 .ad-hero {
     min-height: 82vh;
     display: flex;
@@ -1477,7 +1477,7 @@ details p {
 }
 
 .ad-card li {
-    color: #777d87;
+    color: #b0b8c2;
     border-top: 1px solid #25282d;
     padding: 10px 0;
     font-size: .72rem;
@@ -1486,7 +1486,7 @@ details p {
 }
 
 .ad-card li:before {
-    content: "ÃƒÂ¢Ã…â€œÃ¢â‚¬Å“";
+    content: "\2713";
     color: #078cff;
     margin-right: 9px
 }
@@ -1815,7 +1815,7 @@ details p {
 
 
 /* ================================
-   AJÃƒÂNLATKÃƒâ€°RÃƒâ€°S Ã¢â‚¬â€ SIKERES KÃƒÅ“LDÃƒâ€°S
+   AJÃƒÆ’Ã‚ÂNLATKÃƒÆ’Ã¢â‚¬Â°RÃƒÆ’Ã¢â‚¬Â°S ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SIKERES KÃƒÆ’Ã…â€œLDÃƒÆ’Ã¢â‚¬Â°S
    ================================ */
 
 body.modal-open {
@@ -1937,7 +1937,7 @@ body.modal-open {
     }
 }
 
-/* AJÃNLATKÃ‰RÃ‰S - FORM MEGJELENÃTÃ‰SE */
+/* AJÃƒÂNLATKÃƒâ€°RÃƒâ€°S - FORM MEGJELENÃƒÂTÃƒâ€°SE */
 
 .quote-form {
     opacity: 1 !important;
@@ -1945,8 +1945,8 @@ body.modal-open {
 }
 
 /* ==================================================
-   WEBLUME â€” VÃ‰GLEGES FÅOLDALI HERO
-   A HTML-ben lÃ©vÅ‘ hero hÃ¡ttÃ©rstÃ­lust is felÃ¼lÃ­rja.
+   WEBLUME Ã¢â‚¬â€ VÃƒâ€°GLEGES FÃ…ÂOLDALI HERO
+   A HTML-ben lÃƒÂ©vÃ…â€˜ hero hÃƒÂ¡ttÃƒÂ©rstÃƒÂ­lust is felÃƒÂ¼lÃƒÂ­rja.
 ================================================== */
 
 .hero-home {
@@ -1993,7 +1993,7 @@ body.modal-open {
         ) !important;
 }
 
-/* A kÃ©k sweep animÃ¡ciÃ³ ne takarja el a fotÃ³t. */
+/* A kÃƒÂ©k sweep animÃƒÂ¡ciÃƒÂ³ ne takarja el a fotÃƒÂ³t. */
 .hero-home::before {
     display: none !important;
 }
@@ -2217,8 +2217,8 @@ body.modal-open {
 }
 
 /* ==================================================
-   WEBLUME FÅOLDAL â€” HERO SZÃ–VEG A GENERÃLT MINTA SZERINT
-   A HTML vÃ¡ltoztatÃ¡sa nÃ©lkÃ¼l
+   WEBLUME FÃ…ÂOLDAL Ã¢â‚¬â€ HERO SZÃƒâ€“VEG A GENERÃƒÂLT MINTA SZERINT
+   A HTML vÃƒÂ¡ltoztatÃƒÂ¡sa nÃƒÂ©lkÃƒÂ¼l
 ================================================== */
 
 .hero-home {
@@ -2269,7 +2269,7 @@ body.modal-open {
     margin-top: 15px !important;
 }
 
-/* FelsÅ‘ kis sor: SZOMBATHELY, HU // ÃšJ VÃLLALKOZÃS */
+/* FelsÃ…â€˜ kis sor: SZOMBATHELY, HU // ÃƒÅ¡J VÃƒÂLLALKOZÃƒÂS */
 .hero-copy .eyebrow {
     display: flex !important;
     align-items: center !important;
@@ -2293,7 +2293,7 @@ body.modal-open {
     letter-spacing: 2px !important;
 }
 
-/* FÅ‘cÃ­m */
+/* FÃ…â€˜cÃƒÂ­m */
 .hero-copy h1 {
     margin: 0 0 28px !important;
     max-width: 650px !important;
@@ -2318,7 +2318,7 @@ body.modal-open {
     margin-top: .14em !important;
 }
 
-/* A mÃ¡sodik sor kÃ©k, ahogy a generÃ¡lt mintakÃ©pen */
+/* A mÃƒÂ¡sodik sor kÃƒÂ©k, ahogy a generÃƒÂ¡lt mintakÃƒÂ©pen */
 .hero-copy h1 > span:nth-child(2) {
     color: var(--blue) !important;
 }
@@ -2327,7 +2327,7 @@ body.modal-open {
     color: var(--blue) !important;
 }
 
-/* LeÃ­rÃ¡s */
+/* LeÃƒÂ­rÃƒÂ¡s */
 .hero-copy p {
     max-width: 570px !important;
     margin: 0 !important;
@@ -2482,8 +2482,8 @@ body.modal-open {
 }
 
 /* =========================================================
-   REFERENCIA OLDAL — FELSŐ BLOKK VÉGLEGES JAVÍTÁS
-   A nagy sötét keretes dobozt megszünteti.
+   REFERENCIA OLDAL â€” FELSÅ BLOKK VÃ‰GLEGES JAVÃTÃS
+   A nagy sÃ¶tÃ©t keretes dobozt megszÃ¼nteti.
    ========================================================= */
 
 body.refs-page .refs-main {
@@ -2491,7 +2491,7 @@ body.refs-page .refs-main {
     padding-top: 105px !important;
 }
 
-/* nincs külön panel, a háttér folyamatos marad */
+/* nincs kÃ¼lÃ¶n panel, a hÃ¡ttÃ©r folyamatos marad */
 body.refs-page .refs-head {
     position: relative;
     min-height: 390px;
@@ -2507,7 +2507,7 @@ body.refs-page .refs-head {
     box-shadow: none !important;
 }
 
-/* finom háttérfény, nem a szöveg mögött */
+/* finom hÃ¡ttÃ©rfÃ©ny, nem a szÃ¶veg mÃ¶gÃ¶tt */
 body.refs-page .refs-head::before {
     content: "";
     position: absolute;
@@ -2541,7 +2541,7 @@ body.refs-page .refs-head::after {
     );
 }
 
-/* felső kis cím */
+/* felsÅ‘ kis cÃ­m */
 body.refs-page .refs-kicker {
     position: relative;
     display: block;
@@ -2552,7 +2552,7 @@ body.refs-page .refs-kicker {
     text-shadow: none !important;
 }
 
-/* nagy cím */
+/* nagy cÃ­m */
 body.refs-page .refs-head h1 {
     position: relative;
     margin: 0 !important;
@@ -2563,13 +2563,13 @@ body.refs-page .refs-head h1 {
     text-shadow: 0 10px 35px rgba(0,0,0,.55) !important;
 }
 
-/* csak a második sor kék */
+/* csak a mÃ¡sodik sor kÃ©k */
 body.refs-page .refs-head h1 span {
     color: #008cff !important;
     text-shadow: 0 8px 35px rgba(0,0,0,.35) !important;
 }
 
-/* jobb oldali leírás */
+/* jobb oldali leÃ­rÃ¡s */
 body.refs-page .refs-head > p {
     position: relative;
     max-width: 360px;
@@ -2588,12 +2588,12 @@ body.refs-page .refs-head > p strong {
     font: 600 16px/1.5 Inter, Arial, sans-serif !important;
 }
 
-/* a kép már ne közvetlenül a cím alá tapadjon */
+/* a kÃ©p mÃ¡r ne kÃ¶zvetlenÃ¼l a cÃ­m alÃ¡ tapadjon */
 body.refs-page .ref-list {
     margin-top: 0 !important;
 }
 
-/* desktop: a referencia kép kerete is egységesebb */
+/* desktop: a referencia kÃ©p kerete is egysÃ©gesebb */
 body.refs-page .ref-card {
     border-color: rgba(255,255,255,.10);
 }
@@ -2662,9 +2662,9 @@ body.refs-page .ref-card {
 }
 
 /* =========================================================
-   REFERENCIÁK — KOMPAKT FELSŐ RÉSZ
-   A 2026-10-02-i képernyőkép alapján:
-   kisebb felső tér + cím közelebb a képhez.
+   REFERENCIÃK â€” KOMPAKT FELSÅ RÃ‰SZ
+   A 2026-10-02-i kÃ©pernyÅ‘kÃ©p alapjÃ¡n:
+   kisebb felsÅ‘ tÃ©r + cÃ­m kÃ¶zelebb a kÃ©phez.
    ========================================================= */
 
 body.refs-page .refs-main {
@@ -2672,7 +2672,7 @@ body.refs-page .refs-main {
     padding-bottom: 90px !important;
 }
 
-/* A felső blokk ne legyen magas */
+/* A felsÅ‘ blokk ne legyen magas */
 body.refs-page .refs-head {
     min-height: 0 !important;
     height: auto !important;
@@ -2683,13 +2683,13 @@ body.refs-page .refs-head {
     gap: 55px !important;
 }
 
-/* Kék vonal is rövidebb legyen */
+/* KÃ©k vonal is rÃ¶videbb legyen */
 body.refs-page .refs-head::after {
     top: 35px !important;
     height: 220px !important;
 }
 
-/* Cím mérete és sortávolsága */
+/* CÃ­m mÃ©rete Ã©s sortÃ¡volsÃ¡ga */
 body.refs-page .refs-head h1 {
     font-size: clamp(72px, 8vw, 132px) !important;
     line-height: .74 !important;
@@ -2700,19 +2700,19 @@ body.refs-page .refs-kicker {
     margin-bottom: 19px !important;
 }
 
-/* Jobb oldali szöveg ne legyen túl magasan */
+/* Jobb oldali szÃ¶veg ne legyen tÃºl magasan */
 body.refs-page .refs-head > p {
     margin-top: 0 !important;
     font-size: 14px !important;
     line-height: 1.65 !important;
 }
 
-/* A projektkép közvetlenebbül kövesse a fejlécet */
+/* A projektkÃ©p kÃ¶zvetlenebbÃ¼l kÃ¶vesse a fejlÃ©cet */
 body.refs-page .ref-list {
     margin-top: 0 !important;
 }
 
-/* Első kép ne legyen túl magas */
+/* ElsÅ‘ kÃ©p ne legyen tÃºl magas */
 body.refs-page .ref-image {
     height: clamp(280px, 36vw, 500px) !important;
 }
