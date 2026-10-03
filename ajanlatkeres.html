@@ -112,6 +112,71 @@
             font-size: 11px;
         }
 
+        .attachment-field { margin-top: 22px; }
+        .attachment-field > label {
+            display: block;
+            margin-bottom: 10px;
+            color: #747980;
+            font: 700 10px "Barlow Condensed", sans-serif;
+            letter-spacing: 3px;
+        }
+        .attachment-drop {
+            position: relative;
+            display: flex;
+            min-height: 112px;
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border: 1px dashed #3a424b;
+            background: linear-gradient(120deg, rgba(0,140,255,.07), rgba(12,14,16,.9));
+            color: #c7cbd1;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+        .attachment-drop:hover, .attachment-drop:focus-within {
+            border-color: #008cff;
+            background-color: #0c1117;
+        }
+        .attachment-drop input {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .attachment-icon { color: #008cff; font-size: 24px; }
+        .attachment-copy strong {
+            display: block;
+            color: #f4f5f7;
+            font: 700 17px "Barlow Condensed", sans-serif;
+            letter-spacing: 1px;
+        }
+        .attachment-copy span { display: block; margin-top: 5px; color: #777c83; font-size: 11px; }
+        .attachment-list { display: grid; gap: 7px; margin-top: 10px; }
+        .attachment-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 9px 11px;
+            border: 1px solid #24282d;
+            color: #c7cbd1;
+            font-size: 12px;
+            overflow-wrap: anywhere;
+        }
+        .attachment-item button {
+            flex: 0 0 auto;
+            border: 0;
+            background: transparent;
+            color: #9aa1aa;
+            font-size: 19px;
+            cursor: pointer;
+        }
+        .attachment-help { margin-top: 8px; color: #656b73; font-size: 11px; line-height: 1.5; }
+
         @media (max-width: 650px) {
             .quote-type-grid {
                 grid-template-columns: 1fr;
@@ -343,6 +408,27 @@
                         ></textarea>
                     </div>
 
+                    <div class="field full-row attachment-field conditional-field reklam-field">
+                        <label for="quoteFiles">CSATOLMÁNYOK (OPCIONÁLIS)</label>
+                        <div class="attachment-drop">
+                            <span class="attachment-icon" aria-hidden="true">＋</span>
+                            <span class="attachment-copy">
+                                <strong>Válassz képeket vagy húzd ide</strong>
+                                <span>JPG, JPEG vagy PNG · legfeljebb 5 fájl, fájlonként 5 MB</span>
+                            </span>
+                            <input
+                                id="quoteFiles"
+                                name="attachments"
+                                type="file"
+                                accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+                                multiple
+                                aria-describedby="attachmentHelp attachmentList"
+                            >
+                        </div>
+                        <div class="attachment-list" id="attachmentList" aria-live="polite"></div>
+                        <p class="attachment-help" id="attachmentHelp">Logót, referencia képet vagy más, a projekthez tartozó képet is csatolhatsz.</p>
+                    </div>
+
                 </div>
 
                 <!-- A BACKEND SZÁMÁRA EGYÉRTELMŰEN JELEZZÜK A TÍPUST -->
@@ -422,6 +508,7 @@
 
         const websitePackage = document.getElementById("websitePackage");
         const adType = document.getElementById("adType");
+        const quoteFiles = document.getElementById("quoteFiles");
 
         function setRequired(fields, required) {
             fields.forEach(field => {
@@ -453,6 +540,10 @@
                 setRequired(reklamFields, false);
 
                 if (adType) adType.value = "";
+                if (quoteFiles) {
+                    quoteFiles.value = "";
+                    quoteFiles.dispatchEvent(new Event("change", { bubbles: true }));
+                }
             }
         }
 

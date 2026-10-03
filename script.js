@@ -1,5 +1,6 @@
 
 const englishText = {
+    "BLOG / HÍREK":"BLOG / NEWS",
     "< 24 ÓRA":"< 24 HOURS", "Bemutatkozó oldal":"Business website", "Egyedi alkalmazás":"Custom application", "pl. 2026 augusztus":"e.g. August 2026",
     "SZÍVÓS. — Webfejlesztés":"SZÍVÓS. — Web Development", "REFERENCIÁK — SZÍVÓS.":"PROJECTS — SZÍVÓS.", "WEBOLDAL RENDELÉS — SZÍVÓS.":"WEBSITE ORDER — SZÍVÓS.", "AJÁNLATKÉRÉS — SZÍVÓS.":"QUOTE REQUEST — SZÍVÓS.", "KAPCSOLAT — SZÍVÓS.":"CONTACT — SZÍVÓS.", "SZÍVÓS. — Reklám készítés":"SZÍVÓS. — Advertising",
     "Név":"Name", "Cég":"Company", "Email":"Email", "Telefon":"Phone", "Csomag":"Package", "Határidő":"Deadline", "Költségkeret":"Budget", "Projekt leírása":"Project description",
@@ -41,6 +42,8 @@ englishText["02 / Resolume"] = "02 / Resolume project";
 englishText["03 / Kampány"] = "03 / Campaign";
 englishText["ÁRAJANLAT KÉRÉS →"] = "REQUEST A QUOTE →";
 Object.assign(englishText, {
+    "Egyetemi intézményi weboldal hírekkel, eseménynaptárral és galériával. Reszponzív, adminisztrálható felület.":"University institutional website featuring news, an event calendar, and a gallery. Responsive, administrable interface.",
+    
     "// REFERENCIÁK / MUNKÁIM":"// PROJECTS / MY WORK",
     "WEBOLDAL, REKLÁMANYAG MEGRENDELÉS →":"WEBSITE AND ADVERTISING MATERIAL ORDER →",
     "Weboldalak, webalkalmazások és digitális megoldások, amelyeket különböző célokra és vállalkozások számára készítettem.":"Websites, web applications, and digital solutions built for different goals and businesses.",
@@ -61,6 +64,11 @@ Object.assign(englishText, {
 
 
 Object.assign(englishText, {
+    "Válassz képeket vagy húzd ide":"Select images or drag them here",
+    "JPG, JPEG vagy PNG · legfeljebb 5 fájl, fájlonként 5 MB":"JPG, JPEG, or PNG · up to 5 files, 5 MB per file",
+    "Logót, referencia képet vagy más, a projekthez tartozó képet is csatolhatsz.":"You can also attach a logo, a reference image, or other images related to the project.",
+    "CSATOLMÁNYOK (OPCIONÁLIS)":"ATTACHMENTS (OPTIONAL)",
+    "Először válaszd ki, hogy milyen szolgáltatásra szeretnél ajánlatot kérni.":"First, select the service for which you would like to request a quote.",
     "MIT SZERETNÉL RENDELNI? *": "WHAT WOULD YOU LIKE TO ORDER? *",
     "WEBOLDAL": "WEBSITE",
     "Weboldal, webshop vagy egyedi webalkalmazás": "Website, online store or custom web application",

@@ -27,6 +27,52 @@ document.addEventListener("DOMContentLoaded", () => {
     const successModalOk =
         document.getElementById("successModalOk");
 
+    const fileInput = document.getElementById("quoteFiles");
+    const fileList = document.getElementById("attachmentList");
+    const MAX_FILES = 5;
+    const MAX_FILE_SIZE = 5 * 1024 * 1024;
+    const allowedTypes = new Set(["image/jpeg", "image/png"]);
+
+    function renderSelectedFiles() {
+        if (!fileInput || !fileList) return;
+
+        fileList.replaceChildren();
+        Array.from(fileInput.files).forEach((file, index) => {
+            const row = document.createElement("div");
+            row.className = "attachment-item";
+
+            const name = document.createElement("span");
+            name.textContent = `${file.name} · ${(file.size / 1024 / 1024).toFixed(2)} MB`;
+
+            const remove = document.createElement("button");
+            remove.type = "button";
+            remove.textContent = "×";
+            remove.setAttribute("aria-label", `Remove ${file.name}`);
+            remove.addEventListener("click", () => {
+                const transfer = new DataTransfer();
+                Array.from(fileInput.files).forEach((selected, selectedIndex) => {
+                    if (selectedIndex !== index) transfer.items.add(selected);
+                });
+                fileInput.files = transfer.files;
+                renderSelectedFiles();
+            });
+
+            row.append(name, remove);
+            fileList.append(row);
+        });
+    }
+
+    function readFileAsDataUrl(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = () => reject(new Error(`Could not read ${file.name}.`));
+            reader.readAsDataURL(file);
+        });
+    }
+
+    if (fileInput) fileInput.addEventListener("change", renderSelectedFiles);
+
 
     /* ========================================
        SIKERES KÜLDÉS — POPUP MEGNYITÁSA
@@ -223,6 +269,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     const formData =
                         new FormData(form);
 
+                    const selectedFiles = Array.from(fileInput?.files || []);
+                    if (selectedFiles.length > MAX_FILES) {
+                        throw new Error("Legfeljebb 5 képet csatolhatsz.");
+                    }
+                    for (const file of selectedFiles) {
+                        if (!allowedTypes.has(file.type)) {
+                            throw new Error("Csak JPG, JPEG és PNG képek csatolhatók.");
+                        }
+                        if (file.size > MAX_FILE_SIZE) {
+                            throw new Error("Egy fájl mérete legfeljebb 5 MB lehet.");
+                        }
+                    }
+                    const attachments = await Promise.all(selectedFiles.map(async file => ({
+                        name: file.name,
+                        type: file.type,
+                        data: await readFileAsDataUrl(file)
+                    })));
+
 
                     /* ========================================
                        KÖZÖS MEZŐK
@@ -415,7 +479,9 @@ ${projekt}
                         koltsegkeret,
 
                         projektLeiras:
-                            finalDescription
+                            finalDescription,
+
+                        attachments
 
                     };
 
@@ -476,6 +542,7 @@ ${projekt}
                        ======================================== */
 
                     form.reset();
+                    renderSelectedFiles();
 
 
                     /* visszaállítjuk WEBOLDAL-ra */
