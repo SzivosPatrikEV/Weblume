@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
         /* ===== WEBLUME REFERENCIÁK — ÚJ FELOLDÁS ===== */
         .refs-page {
             background:
-                radial-gradient(circle at 80% 10%, rgba(0,140,255,.10), transparent 25%),
+                radial-gradient(circle at 80% 10%, rgba(0, 140, 255, .10), transparent 25%),
                 #050607;
         }
 
@@ -74,14 +75,14 @@
         .ref-card {
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,.10);
+            border: 1px solid rgba(255, 255, 255, .10);
             background: #090b0e;
             transition: transform .35s ease, border-color .35s ease;
         }
 
         .ref-card:hover {
             transform: translateY(-7px);
-            border-color: rgba(0,140,255,.55);
+            border-color: rgba(0, 140, 255, .55);
         }
 
         .ref-image {
@@ -98,7 +99,7 @@
             object-fit: cover;
             object-position: center;
             filter: saturate(.9);
-            transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .7s ease;
+            transition: transform .7s cubic-bezier(.2, .7, .2, 1), filter .7s ease;
         }
 
         .ref-card:hover .ref-image img {
@@ -110,7 +111,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, transparent 45%, rgba(3,5,8,.68));
+            background: linear-gradient(to bottom, transparent 45%, rgba(3, 5, 8, .68));
             pointer-events: none;
         }
 
@@ -119,7 +120,7 @@
             z-index: 2;
             left: 28px;
             bottom: 20px;
-            color: rgba(255,255,255,.18);
+            color: rgba(255, 255, 255, .18);
             font: 900 110px/1 "Barlow Condensed", sans-serif;
             letter-spacing: -.06em;
         }
@@ -130,7 +131,7 @@
             gap: 40px;
             align-items: end;
             padding: 35px 40px 38px;
-            border-top: 1px solid rgba(255,255,255,.08);
+            border-top: 1px solid rgba(255, 255, 255, .08);
         }
 
         .ref-meta {
@@ -163,7 +164,7 @@
 
         .ref-tag {
             padding: 8px 11px;
-            border: 1px solid rgba(255,255,255,.12);
+            border: 1px solid rgba(255, 255, 255, .12);
             color: #cbd0d6;
             font: 700 9px/1 "Barlow Condensed", sans-serif;
             letter-spacing: 1.7px;
@@ -188,14 +189,16 @@
             transform: translateY(-2px);
         }
 
-        .ref-open span { font-size: 17px; }
+        .ref-open span {
+            font-size: 17px;
+        }
 
         .refs-cta {
             margin-top: 55px;
             padding: 48px;
-            border: 1px solid rgba(0,140,255,.25);
+            border: 1px solid rgba(0, 140, 255, .25);
             background:
-                linear-gradient(120deg, rgba(0,140,255,.09), transparent),
+                linear-gradient(120deg, rgba(0, 140, 255, .09), transparent),
                 #080a0d;
             display: flex;
             justify-content: space-between;
@@ -223,18 +226,26 @@
         }
 
         @media (max-width: 800px) {
-            .refs-main { padding: 65px 0 75px; }
+            .refs-main {
+                padding: 65px 0 75px;
+            }
+
             .refs-head {
                 grid-template-columns: 1fr;
                 gap: 25px;
                 margin-bottom: 45px;
             }
-            .ref-image { height: 320px; }
+
+            .ref-image {
+                height: 320px;
+            }
+
             .ref-content {
                 grid-template-columns: 1fr;
                 gap: 25px;
                 padding: 30px 25px;
             }
+
             .refs-cta {
                 padding: 32px 25px;
                 flex-direction: column;
@@ -243,134 +254,183 @@
         }
 
         @media (max-width: 500px) {
-            .refs-main { width: 90%; }
-            .refs-head h1 { font-size: 65px; }
-            .ref-image { height: 245px; }
-            .ref-number { font-size: 75px; left: 18px; }
-            .ref-content h2 { font-size: 45px; }
+            .refs-main {
+                width: 90%;
+            }
+
+            .refs-head h1 {
+                font-size: 65px;
+            }
+
+            .ref-image {
+                height: 245px;
+            }
+
+            .ref-number {
+                font-size: 75px;
+                left: 18px;
+            }
+
+            .ref-content h2 {
+                font-size: 45px;
+            }
         }
     </style>
 </head>
 
 <body id="top" class="refs-page">
 
-<header class="header">
-    <a class="logo" href="/">Weblume<span>.</span></a>
+    <header class="header">
+        <a class="logo" href="/">Weblume<span>.</span></a>
 
-    <nav class="nav">
-        <a href="/">KEZDŐLAP</a>
-        <a href="/weboldal-rendeles">WEBOLDAL RENDELÉS</a>
-        <a href="/reklam-keszites">REKLÁM KÉSZÍTÉS</a>
-        <a href="/referenciak" class="active">REFERENCIÁK</a>
-        <a href="/kapcsolat">KAPCSOLAT</a>
-    </nav>
+        <nav class="nav">
+            <a href="/">KEZDŐLAP</a>
+            <a href="/weboldal-rendeles">WEBOLDAL RENDELÉS</a>
+            <a href="/reklam-keszites">REKLÁM KÉSZÍTÉS</a>
+            <a href="/referenciak" class="active">REFERENCIÁK</a>
+            <a href="/kapcsolat">KAPCSOLAT</a>
+        </nav>
 
-    <div class="header-right">
-        <button class="lang active">🇭🇺</button>
-        <button class="lang">🇬🇧</button>
-        <span class="status"><i></i> ÚJ VÁLLALKOZÁS — NYITVA</span>
-    </div>
+        <div class="header-right">
+            <button class="lang active">🇭🇺</button>
+            <button class="lang">🇬🇧</button>
+            <span class="status"><i></i> ÚJ VÁLLALKOZÁS — NYITVA</span>
+        </div>
 
-    <button class="menu-toggle" aria-label="Menü">☰</button>
-</header>
+        <button class="menu-toggle" aria-label="Menü">☰</button>
+    </header>
 
-<main>
-    <section class="refs-main">
+    <main>
+        <section class="refs-main">
 
-        <div class="refs-head">
-            <div>
-                <div class="refs-kicker">// REFERENCIÁK / MUNKÁIM</div>
-                <h1><span class="refs-line-light">AMIKET</span><span>ÉPÍTETTEM.</span></h1>
+            <div class="refs-head">
+                <div>
+                    <div class="refs-kicker">// REFERENCIÁK / MUNKÁIM</div>
+                    <h1><span class="refs-line-light">AMIKET</span><span>ÉPÍTETTEM.</span></h1>
+                </div>
+
+                <p>
+                    <strong>Valós projektek. Valós eredmények.</strong><br>
+                    Weboldalak, webalkalmazások és digitális megoldások,
+                    amelyeket különböző célokra és vállalkozások számára készítettem.
+                </p>
             </div>
 
-            <p>
-                <strong>Valós projektek. Valós eredmények.</strong><br>
-                Weboldalak, webalkalmazások és digitális megoldások,
-                amelyeket különböző célokra és vállalkozások számára készítettem.
-            </p>
-        </div>
+            <div class="ref-list">
 
-        <div class="ref-list">
-
-            <article class="ref-card">
-                <div class="ref-image">
-                    <img src="weblume_referencia_kepek/ref-pte-szgy.png" alt="PTE SZGY weboldal referencia">
-                    <span class="ref-number">01</span>
-                </div>
-
-                <div class="ref-content">
-                    <div>
-                        <div class="ref-meta">01 / 2024 — WEB DEVELOPMENT</div>
-                        <h2>PTE SZGY</h2>
-                        <p>
-                            Egyetemi intézményi weboldal hírekkel,
-                            eseménynaptárral és galériával. Reszponzív,
-                            adminisztrálható felület.
-                        </p>
-                        <div class="ref-tags">
-                            <span class="ref-tag">HTML</span>
-                            <span class="ref-tag">CSS</span>
-                            <span class="ref-tag">MYSQL</span>
-                        </div>
+                <article class="ref-card">
+                    <div class="ref-image">
+                        <img src="weblume_referencia_kepek/ref-pte-szgy.png" alt="PTE SZGY weboldal referencia">
+                        <span class="ref-number">01</span>
                     </div>
 
-                    <a class="ref-open" href="https://pteszgy.pte.hu">
-                        MEGNYITÁS <span>↗</span>
-                    </a>
-                </div>
-            </article>
-
-            <article class="ref-card">
-                <div class="ref-image">
-                    <img src="weblume_referencia_kepek/ref-nails-by-rebeka.png" alt="Nails by Rebeka weboldal referencia">
-                    <span class="ref-number">02</span>
-                </div>
-
-                <div class="ref-content">
-                    <div>
-                        <div class="ref-meta">02 / 2025 — BUSINESS WEBSITE</div>
-                        <h2>NAILS BY REBEKA</h2>
-                        <p>
-                            Prémium műköröm szalon prezentációs oldala
-                            online időpontfoglalással, árlistával és munkagalériával.
-                        </p>
-                        <div class="ref-tags">
-                            <span class="ref-tag">HTML</span>
-                            <span class="ref-tag">JS</span>
-                            <span class="ref-tag">CSS</span>
-                            <span class="ref-tag">API</span>
+                    <div class="ref-content">
+                        <div>
+                            <div class="ref-meta">01 / 2024 — WEB DEVELOPMENT</div>
+                            <h2>PTE SZGY</h2>
+                            <p>
+                                Egyetemi intézményi weboldal hírekkel,
+                                eseménynaptárral és galériával. Reszponzív,
+                                adminisztrálható felület.
+                            </p>
+                            <div class="ref-tags">
+                                <span class="ref-tag">HTML</span>
+                                <span class="ref-tag">CSS</span>
+                                <span class="ref-tag">MYSQL</span>
+                            </div>
                         </div>
+
+                        <a class="ref-open" href="https://pteszgy.pte.hu">
+                            MEGNYITÁS <span>↗</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="ref-card">
+                    <div class="ref-image">
+                        <img src="weblume_referencia_kepek/ref-nails-by-rebeka.png"
+                            alt="Nails by Rebeka weboldal referencia">
+                        <span class="ref-number">02</span>
                     </div>
 
-                    <a class="ref-open" href="#">
-                        MEGNYITÁS <span>↗</span>
-                    </a>
-                </div>
-            </article>
+                    <div class="ref-content">
+                        <div>
+                            <div class="ref-meta">02 / 2025 — BUSINESS WEBSITE</div>
+                            <h2>NAILS BY REBEKA</h2>
+                            <p>
+                                Prémium műköröm szalon prezentációs oldala
+                                online időpontfoglalással, árlistával és munkagalériával.
+                            </p>
+                            <div class="ref-tags">
+                                <span class="ref-tag">HTML</span>
+                                <span class="ref-tag">JS</span>
+                                <span class="ref-tag">CSS</span>
+                                <span class="ref-tag">API</span>
+                            </div>
+                        </div>
 
-        </div>
+                        <a class="ref-open" href="https://nailsbyrebeka.hu">
+                            MEGNYITÁS <span>↗</span>
+                        </a>
+                    </div>
+                </article>
 
-        <div class="refs-cta">
-            <div>
-                <small>// KÖVETKEZŐ PROJEKT</small>
-                <h3>TE KÖVETKEZEL.</h3>
-                <p>Szeretnél hasonló vagy teljesen egyedi weboldalt?</p>
+                <article class="ref-card">
+                        <div class="ref-image">
+                            <img src="weblume_referencia_kepek/bcviennaarena.png"
+                                alt="Nails by Rebeka weboldal referencia">
+                            <span class="ref-number">02</span>
+                        </div>
+                    <div class="ref-content">
+                        <div>
+                            <div class="ref-meta">02 / 2025 — BUSINESS WEBSITE</div>
+                            <h2>BC Vienna Arena</h2>
+                            <p>
+                                Modern rendezvényfoglaló weboldal a bécsi Vienna Arena számára,
+                                amely lehetővé teszi a csarnok rendezvénycélú bérlését és az
+                                időpontok egyszerű online foglalását. Egyedi felület,
+                                dinamikus funkciók és saját backend az átlátható,
+                                felhasználóbarát foglalási folyamatért.
+                            </p>
+                            <div class="ref-tags">
+                                <span class="ref-tag">HTML</span>
+                                <span class="ref-tag">JS</span>
+                                <span class="ref-tag">CSS</span>
+                                <span class="ref-tag">API</span>
+                                <span class="ref-tag">BACKEND</span>
+                            </div>
+                        </div>
+
+                        <a class="ref-open" href="https://szivospatrikev.github.io/bcviennaarena/">
+                            MEGNYITÁS <span>↗</span>
+                        </a>
+                    </div>
+                </article>
+
             </div>
 
-            <a class="btn btn-primary" href="weboldal-rendeles.html">
-                WEBOLDAL RENDELÉS <span>→</span>
-            </a>
-        </div>
+            <div class="refs-cta">
+                <div>
+                    <small>// KÖVETKEZŐ PROJEKT</small>
+                    <h3>TE KÖVETKEZEL.</h3>
+                    <p>Szeretnél hasonló vagy teljesen egyedi weboldalt?</p>
+                </div>
 
-    </section>
-</main>
+                <a class="btn btn-primary" href="weboldal-rendeles.html">
+                    WEBOLDAL RENDELÉS <span>→</span>
+                </a>
+            </div>
 
-<footer class="footer">
-    <div class="logo">Weblume<span>.</span></div>
-    <p>© 2026 Weblume. Minden jog fenntartva.</p>
-    <a href="#top">VISSZA A TETEJÉRE ↑</a>
-</footer>
+        </section>
+    </main>
 
-<script src="script.js"></script>
+    <footer class="footer">
+        <div class="logo">Weblume<span>.</span></div>
+        <p>© 2026 Weblume. Minden jog fenntartva.</p>
+        <a href="#top">VISSZA A TETEJÉRE ↑</a>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
