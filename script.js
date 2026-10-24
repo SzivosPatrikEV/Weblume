@@ -202,13 +202,6 @@ document.addEventListener("DOMContentLoaded", () => {
         revealItems.forEach(item => item.classList.add("in-view"));
     }
 
-    const menu = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav");
-
-    if (menu && nav) {
-        menu.addEventListener("click", () => nav.classList.toggle("mobile-open"));
-        nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("mobile-open")));
-    }
 
     // Package calculator
     let selected = null;

@@ -3,257 +3,68 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Weblume — Webfejlesztés</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#05080d">
+    <meta name="description" content="Weblume — modern weboldalak, webalkalmazások és professzionális LED fal bérlés.">
+    <title>Weblume — Digitális megoldások és látványos élmények</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="top">
-
-    <!-- =========================
-         HEADER
-    ========================== -->
-
-    <header class="header">
-
-        <a href="/" class="logo">
-            Weblume<span>.</span>
-        </a>
-
-        <nav class="nav">
-
-            <a href="/" class="active">
-                KEZDŐLAP
-            </a>
-
-            <a href="/weboldal-rendeles">
-                WEBOLDAL RENDELÉS
-            </a>
-
-            <a href="/reklam-keszites">
-                REKLÁM KÉSZÍTÉS
-            </a>
-
-            <a href="/referenciak">
-                REFERENCIÁK
-            </a>
-
-            <a href="/kapcsolat">
-                KAPCSOLAT
-            </a>
-
-        </nav>
-
-        <div class="header-right">
-
-            <button class="lang active">
-                🇭🇺
-            </button>
-
-            <button class="lang">
-                🇬🇧
-            </button>
-
-            <span class="status">
-                <i></i>
-                ÚJ VÁLLALKOZÁS — NYITVA
-            </span>
-
-        </div>
-
-        <button class="menu-toggle" aria-label="Menü">
-            ☰
-        </button>
-
+<body id="top" class="home-v2">
+    <header class="header"><a href="index.html" class="brand-logo"><span class="brand-mark">W</span><span
+                class="brand-word">WEB<span>LUME</span></span></a>
+        <nav class="nav" aria-label="Fő navigáció"><a href="index.html" class="active">Kezdőlap</a><a
+                href="weboldal-rendeles.html">Webfejlesztés</a><a href="reklam-keszites.html">LED fal bérlés</a><a
+                href="rolunk.html">Rólunk</a><a href="referenciak.html">Referenciák</a><a
+                href="kapcsolat.html">Kapcsolat</a></nav>
+        <a class="header-cta" href="ajanlatkeres.html">Ajánlatkérés <span>→</span></a><button class="menu-toggle"
+            aria-label="Menü megnyitása" aria-expanded="false">☰</button>
     </header>
-
-
     <main class="page">
-
-        <!-- =========================
-             HERO
-        ========================== -->
-
-        <section class="hero-home">
-
-            <div class="hero-copy">
-
-                <div class="eyebrow">
-                    SZOMBATHELY, HU
-                    <span>//</span>
-                    ÚJ VÁLLALKOZÁS
+        <section class="home-hero">
+            <div class="hero-photo" aria-hidden="true"></div>
+            <div class="hero-content">
+                <div class="hero-eyebrow">WEBFEJLESZTÉS <span>×</span> LED FAL <span>×</span> RENDEZVÉNYTECHNIKA</div>
+                <h1>Digitális megoldások<br>és <span>látványos élmények</span></h1>
+                <p class="hero-description">A Weblume.hu ötvözi a modern webfejlesztést és a professzionális LED fal
+                    technológiát, hogy ötleteid online és offline is életre keljenek.</p>
+                <div class="hero-actions"><a class="home-btn primary" href="#szolgaltatasok">Szolgáltatásaink
+                        <span>→</span></a><a class="home-btn secondary" href="kapcsolat.html">Kapcsolat</a></div>
+                <div class="hero-highlights">
+                    <div><span class="line-icon">▱</span><span>Modern<br>weboldalak</span></div>
+                    <div><span class="line-icon">◇</span><span>Egyedi<br>megoldások</span></div>
+                    <div><span class="line-icon">♧</span><span>Rendezvény<br>technika</span></div>
                 </div>
-
-                <h1>
-
-                    <span>
-                        KÓD. AMI
-                    </span>
-
-                    <span>
-                        MŰKÖDIK<span class="hero-dot">.</span>
-                    </span>
-
-                </h1>
-
-                <p>
-                    Szoftverfejlesztő és tesztelő vagyok.
-                    Egyedi weboldalakat, webshopokat és
-                    webalkalmazásokat készítek megrendelésre.
-                </p>
-
-                <div class="hero-actions">
-
-                    <a href="weboldal-rendeles.html" class="btn btn-primary">
-                        WEBOLDAL RENDELÉS
-                        <span>→</span>
-                    </a>
-
-                    <a href="kapcsolat.html" class="btn btn-dark">
-                        KAPCSOLAT
-                        <span>→</span>
-                    </a>
-
-                </div>
-
             </div>
-
         </section>
-
-
-        <!-- =========================
-             SERVICES
-        ========================== -->
-
-        <section class="section services-section">
-
-            <div class="container">
-
-                <div class="section-title">
-
-                    <span></span>
-
-                    <p>
-                        / SZOLGÁLTATÁSOK
+        <section class="home-services" id="szolgaltatasok">
+            <a class="feature-card web-card" href="weboldal-rendeles.html">
+                <div class="feature-copy"><span class="feature-icon">▱</span>
+                    <h2>Webfejlesztés</h2>
+                    <p>Modern, gyors és reszponzív weboldalak, webáruházak és egyedi webes megoldások vállalkozásoknak.
                     </p>
-
-                    <span></span>
-
-                </div>
-
-
-                <div class="service-grid">
-
-
-                    <!-- CARD 01 -->
-
-                    <article class="service-card">
-
-                        <div class="num">
-                            01 / Bemutatkozó
-                        </div>
-
-                        <h2>
-                            LANDING / BEMUTATKOZÓ
-                        </h2>
-
-                        <p>
-                            Egy oldalas vagy több oldalas
-                            prezentációs weboldal —
-                            reszponzív, gyors, SEO alapokkal.
-                        </p>
-
-                        <a href="weboldal-rendeles.html">
-                            → →
-                        </a>
-
-                    </article>
-
-
-                    <!-- CARD 02 -->
-
-                    <article class="service-card">
-
-                        <div class="num">
-                            02 / Webshop
-                        </div>
-
-                        <h2>
-                            WEBSHOP / E-COMMERCE
-                        </h2>
-
-                        <p>
-                            Termékkezelés, pénztár,
-                            Stripe / Barion integráció,
-                            admin felület.
-                        </p>
-
-                        <a href="weboldal-rendeles.html">
-                            → →
-                        </a>
-
-                    </article>
-
-
-                    <!-- CARD 03 -->
-
-                    <article class="service-card">
-
-                        <div class="num">
-                            03 / Egyedi
-                        </div>
-
-                        <h2>
-                            WEBALKALMAZÁS
-                        </h2>
-
-                        <p>
-                            Belső rendszerek,
-                            foglalási felületek,
-                            dashboardok, API-k —
-                            full-stack.
-                        </p>
-
-                        <a href="weboldal-rendeles.html">
-                            → →
-                        </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
+                </div><span class="feature-arrow">→</span>
+            </a>
+            <a class="feature-card led-card" href="reklam-keszites.html">
+                <div class="feature-copy"><span class="feature-icon">▦</span>
+                    <h2>LED fal bérlés</h2>
+                    <p>Professzionális LED fal bérlés és üzemeltetés rendezvényekre, koncertekre, céges eseményekre.</p>
+                </div><span class="feature-arrow">→</span>
+            </a>
         </section>
-
+        <section class="home-bottom">
+            <div class="bottom-brand"><span class="bottom-mark">W</span><span
+                    class="bottom-word">WEB<span>LUME</span><small>.HU</small></span></div>
+            <p>Digitális megoldások. Látványos élmények.</p>
+        </section>
     </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer class="footer">
-
-        <div class="logo">
-            Weblume<span>.</span>
-        </div>
-
-        <p>
-            © 2026 Weblume. Minden jog fenntartva.
-        </p>
-
-        <a href="#top">
-            VISSZA A TETEJÉRE ↑
-        </a>
-
-    </footer>
-
-
+    <footer class="home-footer"><span>© 2026 Weblume. Minden jog fenntartva.</span><a href="#top">Vissza a tetejére
+            ↑</a></footer>
     <script src="script.js"></script>
-
+    <script src="navigation.js"></script>
 </body>
 
 </html>
